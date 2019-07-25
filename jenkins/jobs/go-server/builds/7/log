@@ -1,0 +1,46 @@
+Started by GitHub push by ilyashusain
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen branch in repository origin/test
+Seen 2 remote branches
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 32f657610dbcf31dd6f7ab490bbf5b52abf45b86 (origin/test)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 32f657610dbcf31dd6f7ab490bbf5b52abf45b86
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b test 32f657610dbcf31dd6f7ab490bbf5b52abf45b86
+Commit message: "test"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash /tmp/jenkins8068826914207372275.sh
+test
+Error: No such image: go-http-server:test
+Sending build context to Docker daemon   8.78MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> Using cache
+ ---> 2df2a443545f
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> Using cache
+ ---> f70a7ddd8bdf
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Using cache
+ ---> 590d13a4d141
+Successfully built 590d13a4d141
+cc5d8876c0fecf6587e916cc7392a9473ec5ac639103fd4ec615b41d55f48457
+2018/11/22 10:11:01 [notice] 19#19: signal process started
+Finished: SUCCESS

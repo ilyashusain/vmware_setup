@@ -1,0 +1,70 @@
+Started by user [8mha:////4MCFVUI1u9SKHFJWQmPpNpasASdqTLHVi+nmW9qfsoUpAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 0497d379f996e60796fefbaeaf2c38be303e729a (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0497d379f996e60796fefbaeaf2c38be303e729a
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master 0497d379f996e60796fefbaeaf2c38be303e729a
+Commit message: "docker"
+ > git rev-list --no-walk 0497d379f996e60796fefbaeaf2c38be303e729a # timeout=10
+[workspace] $ /bin/bash /tmp/jenkins5263321039989078528.sh
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.229 s
+[INFO] Finished at: 2018-11-22T09:42:10+00:00
+[INFO] Final Memory: 6M/54M
+[INFO] ------------------------------------------------------------------------
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/jenkins_home/jobs/go-server/workspace). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+master
+6a88491e5680        go-http-server:master   "/bin/sh -c \"/opt/ht…"   10 minutes ago      Up 10 minutes       0.0.0.0:8080->8080/tcp   go-http-server-master
+go-http-server-master
+6a88491e5680        go-http-server:master   "/bin/sh -c \"/opt/ht…"   10 minutes ago      Exited (137) Less than a second ago                         go-http-server-master
+go-http-server-master
+a54c679576a4
+Untagged: go-http-server:master
+Deleted: sha256:a54c679576a436128acc54a73bc0ff07811850770c39a538eaec174f177202e9
+Deleted: sha256:cfe37e18a8373400a9ace081710a1772365a4d51b299d134493acee95ae1d471
+Deleted: sha256:0d9bad3c8183d5db5d5e5adac783ab25361f1fe44df7c77d31504d0653db5ab5
+Deleted: sha256:88dd815368bd1e55080a6458f6218de0ee0dfa069b14e1e99fcbdd5218d9b265
+Sending build context to Docker daemon  8.769MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> 845a0c02ec29
+Removing intermediate container 0c4b73e53074
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> d0af718e9720
+Removing intermediate container 706c17c5f144
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Running in fc5bdfba6e31
+ ---> e233886e8bb5
+Removing intermediate container fc5bdfba6e31
+Successfully built e233886e8bb5
+bc531499b449066a259ca306456fb862c5a9547f0776aa7aef8fd180e3bd7d20
+2018/11/22 09:42:22 [notice] 9#9: signal process started
+Finished: SUCCESS

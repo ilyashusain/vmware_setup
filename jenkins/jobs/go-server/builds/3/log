@@ -1,0 +1,55 @@
+Started by user [8mha:////4GfLS5Zae4UXJFRFOw8deoNaUW/r7CYptlz4Le9AZVF9AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 0497d379f996e60796fefbaeaf2c38be303e729a (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0497d379f996e60796fefbaeaf2c38be303e729a
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master 0497d379f996e60796fefbaeaf2c38be303e729a
+Commit message: "docker"
+ > git rev-list --no-walk 0497d379f996e60796fefbaeaf2c38be303e729a # timeout=10
+[workspace] $ /bin/bash /tmp/jenkins2507519825234096832.sh
+/tmp/jenkins2507519825234096832.sh: line 3: go: command not found
+master
+f97474ed5831
+Untagged: go-http-server:master
+Deleted: sha256:f97474ed58314918f4b05451522307a243fb3b5944a1a4478cabdf18f2942a81
+Deleted: sha256:d6bc5b89979c0c19d658124188871cb902cf8282c1c684144fa5716a2bdc7272
+Deleted: sha256:4bd143db02487d74e4c2fdf2e032b01f8b7af1ad5a98def500d20ca4e05d8b84
+Deleted: sha256:0da586013c8d6940056ef40c2aa61cbd1405e4f1c858abf6bfe3f9bb84fd57c7
+Sending build context to Docker daemon  8.769MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> d29fb0d594f7
+Removing intermediate container a2b6fd9ed29d
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> 7c526aeebd88
+Removing intermediate container 0da1b3476b78
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Running in 2bd421b97e94
+ ---> c686100ab2d0
+Removing intermediate container 2bd421b97e94
+Successfully built c686100ab2d0
+0a9272f255d638574f81365767dc2b6703625392ad9e781c4811a87e9204887f
+Error response from daemon: network go-http-server-ci_default not found
+2018/11/22 09:24:09 [emerg] 6#6: host not found in upstream "go-http-server-master" in /etc/nginx/conf.d/go-http-server-master.conf:2
+nginx: [emerg] host not found in upstream "go-http-server-master" in /etc/nginx/conf.d/go-http-server-master.conf:2
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

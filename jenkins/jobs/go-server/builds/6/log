@@ -1,0 +1,55 @@
+Started by user [8mha:////4MCFVUI1u9SKHFJWQmPpNpasASdqTLHVi+nmW9qfsoUpAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 0497d379f996e60796fefbaeaf2c38be303e729a (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0497d379f996e60796fefbaeaf2c38be303e729a
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master 0497d379f996e60796fefbaeaf2c38be303e729a
+Commit message: "docker"
+ > git rev-list --no-walk 0497d379f996e60796fefbaeaf2c38be303e729a # timeout=10
+[workspace] $ /bin/bash /tmp/jenkins3194763246857621589.sh
+master
+bc531499b449        go-http-server:master   "/bin/sh -c \"/opt/ht…"   2 minutes ago       Up About a minute   0.0.0.0:8080->8080/tcp   go-http-server-master
+go-http-server-master
+bc531499b449        go-http-server:master   "/bin/sh -c \"/opt/ht…"   2 minutes ago       Exited (137) Less than a second ago                         go-http-server-master
+go-http-server-master
+e233886e8bb5
+Untagged: go-http-server:master
+Deleted: sha256:e233886e8bb5af161525d8210b0d14f2e709d2a664116051f5fc5c247ca85ca5
+Deleted: sha256:d0af718e9720f507d0987c0391eb337825920edfb16f2c70b19c38dfa5e679ac
+Deleted: sha256:845a0c02ec2927615dbc9eb1da1956654ddfbc491dabb8c38bb48d0eae875a9a
+Deleted: sha256:5a33588165ae2c78e35070d3cd6390ec87b55d7350cca66c3a63f2e22d80a16d
+Sending build context to Docker daemon  8.769MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> 2df2a443545f
+Removing intermediate container b51d1268fd35
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> f70a7ddd8bdf
+Removing intermediate container 96a113c6486b
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Running in 8ddf9d7d9a6d
+ ---> 590d13a4d141
+Removing intermediate container 8ddf9d7d9a6d
+Successfully built 590d13a4d141
+d6070c26165313701305cc0d2103c0133acba5ba69d3625e616206173a050b69
+2018/11/22 09:44:33 [notice] 14#14: signal process started
+Finished: SUCCESS

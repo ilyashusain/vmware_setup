@@ -1,0 +1,51 @@
+Started by GitHub push by ilyashusain
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen branch in repository origin/test
+Seen 2 remote branches
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 732cde638dc65e5cfb3bdb8d52694bd91ea234e0 (origin/test)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 732cde638dc65e5cfb3bdb8d52694bd91ea234e0
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b test 732cde638dc65e5cfb3bdb8d52694bd91ea234e0
+Commit message: "test"
+ > git rev-list --no-walk 32f657610dbcf31dd6f7ab490bbf5b52abf45b86 # timeout=10
+[workspace] $ /bin/bash /tmp/jenkins6868359576916917084.sh
+test
+cc5d8876c0fe        go-http-server:test     "/bin/sh -c \"/opt/ht…"   About a minute ago   Up About a minute                         go-http-server-test
+go-http-server-test
+cc5d8876c0fe        go-http-server:test     "/bin/sh -c \"/opt/ht…"   About a minute ago   Exited (137) Less than a second ago                         go-http-server-test
+go-http-server-test
+590d13a4d141
+Untagged: go-http-server:test
+Sending build context to Docker daemon  8.784MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> Using cache
+ ---> 2df2a443545f
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> Using cache
+ ---> f70a7ddd8bdf
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Using cache
+ ---> 590d13a4d141
+Successfully built 590d13a4d141
+4c48fab25dc62d1efcf0a75665b87612ce788e619c8d02798869c0c93c2b561c
+2018/11/22 10:12:31 [notice] 23#23: signal process started
+Finished: SUCCESS

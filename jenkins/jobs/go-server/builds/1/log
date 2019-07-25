@@ -1,0 +1,53 @@
+Started by user [8mha:////4BM1ntYCax69ISX4ss7sLclPoZnYsONIq2fslRZ6XXDnAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+Cloning the remote Git repository
+Cloning repository https://github.com/bob-crutchley/go-http-server
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/bob-crutchley/go-http-server
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/bob-crutchley/go-http-server +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/bob-crutchley/go-http-server # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/bob-crutchley/go-http-server # timeout=10
+Fetching upstream changes from https://github.com/bob-crutchley/go-http-server
+ > git fetch --tags --progress https://github.com/bob-crutchley/go-http-server +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision abe9107e4019393fc0862d562c4aedf2d79ff1dd (origin/master, refs/tags/1.0)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f abe9107e4019393fc0862d562c4aedf2d79ff1dd
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master abe9107e4019393fc0862d562c4aedf2d79ff1dd
+Commit message: "added go server"
+First time build. Skipping changelog.
+[workspace] $ /bin/bash /tmp/jenkins8127610714245631032.sh
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.204 s
+[INFO] Finished at: 2018-11-21T14:52:26+00:00
+[INFO] Final Memory: 6M/54M
+[INFO] ------------------------------------------------------------------------
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/jenkins_home/jobs/go-server/workspace). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+master
+Error: No such image: spring-boot-hello-world:master
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /var/jenkins_home/jobs/go-server/workspace/Dockerfile: no such file or directory
+Unable to find image 'spring-boot-hello-world:master' locally
+Trying to pull repository docker.io/library/spring-boot-hello-world ... 
+docker: repository docker.io/spring-boot-hello-world not found: does not exist or no pull access.
+See 'docker run --help'.
+Error response from daemon: No such container: spring-boot-hello-world-master
+2018/11/21 14:52:27 [emerg] 6#6: host not found in upstream "spring-boot-hello-world-master" in /etc/nginx/conf.d/spring-boot-hello-world-master.conf:2
+nginx: [emerg] host not found in upstream "spring-boot-hello-world-master" in /etc/nginx/conf.d/spring-boot-hello-world-master.conf:2
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

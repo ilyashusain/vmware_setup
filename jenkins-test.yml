@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-test-clusterip-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 50000
+      targetPort: 50000
+  selector:
+    app: jenkins-test
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-test-service
+  labels:
+    app: jenkins-test-service
+spec:
+  type: LoadBalancer
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: jenkins-test
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins-test
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins-test
+    spec:
+      containers:
+        - name: jenkins
+          image: ilyashusain/jenkins-auto
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+          ports:
+            - name: http-port
+              containerPort: 8080
+            - name: jnlp-port
+              containerPort: 50000
+          #command: ["/bin/sh"]
+          #args: ["sleep 20"]
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: "/var/jenkins_home"
+      volumes:
+        - name: jenkins-home
+          persistentVolumeClaim:
+            claimName: pvc0005

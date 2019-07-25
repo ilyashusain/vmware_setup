@@ -1,0 +1,81 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.29.3">
+      <projectUrl>https://github.com/ilyashusain/html-Webpage-Golang-Decorated/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/ilyashusain/html-Webpage-Golang-Decorated</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>**</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.LocalBranch/>
+    </extensions>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.29.3">
+      <spec></spec>
+    </com.cloudbees.jenkins.GitHubPushTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+
+BRANCH_NAME=$(git branch | grep \* | cut -d &apos; &apos; -f2)
+echo $BRANCH_NAME
+project=&quot;go-http-server&quot;
+container=&quot;$project-$BRANCH_NAME&quot;
+image=&quot;$project:$BRANCH_NAME&quot;
+docker=&quot;sudo docker&quot;
+# stop container if it&apos;s running
+if $docker ps | grep $container; then
+        $docker stop $container
+fi
+# delete container if it exists
+if $docker ps -a | grep $container; then
+        $docker rm $container
+fi
+# remove image if it exists
+if $docker images -q $image; then
+        $docker rmi $image
+fi
+$docker build -t $image .
+$docker run -d --name $container $image
+$docker network connect own-project_default $container
+echo &quot;location /${project}/${BRANCH_NAME}/ {&quot; &gt; ${container}.conf
+echo -e &quot;\t proxy_pass http://${container}:8080/;&quot; &gt;&gt; ${container}.conf
+echo &quot;}&quot; &gt;&gt; ${container}.conf
+$docker cp ${container}.conf nginx:/etc/nginx/conf.d/${container}.conf
+$docker exec nginx nginx -s reload</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.36">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+      <disableDeferredWipeout>false</disableDeferredWipeout>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
+</project>

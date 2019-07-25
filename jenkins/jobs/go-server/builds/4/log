@@ -1,0 +1,69 @@
+Started by user [8mha:////4MCFVUI1u9SKHFJWQmPpNpasASdqTLHVi+nmW9qfsoUpAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Building in workspace /var/jenkins_home/jobs/go-server/workspace
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+Cloning the remote Git repository
+Cloning repository https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git init /var/jenkins_home/jobs/go-server/workspace # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/ilyashusain/html-Webpage-Golang-Decorated # timeout=10
+Fetching upstream changes from https://github.com/ilyashusain/html-Webpage-Golang-Decorated
+ > git fetch --tags --progress https://github.com/ilyashusain/html-Webpage-Golang-Decorated +refs/heads/*:refs/remotes/origin/*
+Seen branch in repository origin/master
+Seen 1 remote branch
+ > git show-ref --tags -d # timeout=10
+Checking out Revision 0497d379f996e60796fefbaeaf2c38be303e729a (origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0497d379f996e60796fefbaeaf2c38be303e729a
+ > git branch -a -v --no-abbrev # timeout=10
+ > git checkout -b master 0497d379f996e60796fefbaeaf2c38be303e729a
+Commit message: "docker"
+ > git rev-list --no-walk 0497d379f996e60796fefbaeaf2c38be303e729a # timeout=10
+[workspace] $ /bin/bash /tmp/jenkins1469619026209152732.sh
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 0.217 s
+[INFO] Finished at: 2018-11-22T09:31:39+00:00
+[INFO] Final Memory: 6M/54M
+[INFO] ------------------------------------------------------------------------
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory (/var/jenkins_home/jobs/go-server/workspace). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+master
+c686100ab2d0
+Untagged: go-http-server:master
+Deleted: sha256:c686100ab2d0aadf7522c6740faf15e2ec3cece484f508cbc3569d2f969a87a7
+Deleted: sha256:7c526aeebd883256ad41374d299a5f399cb234d70e7925fee79e43b76308a1d8
+Deleted: sha256:d29fb0d594f74e2544b877189a2e51f6eb511b881db5d0cfddc24a8a1390e67a
+Deleted: sha256:897b04b67a3a4155e187a62357e78e6f7385de637dc45fcf0d924facbc573539
+Sending build context to Docker daemon  8.769MB
+Step 1/4 : FROM golang
+ ---> df6ac9d1bf64
+Step 2/4 : COPY app /opt/html-Webpage-Golang-Decorated/app
+ ---> 0d9bad3c8183
+Removing intermediate container 33c982990f7c
+Step 3/4 : WORKDIR "/opt/html-Webpage-Golang-Decorated/"
+ ---> cfe37e18a837
+Removing intermediate container 311e4d0c4a3a
+Step 4/4 : ENTRYPOINT "/opt/html-Webpage-Golang-Decorated/app"
+ ---> Running in 5d09e5091ece
+ ---> a54c679576a4
+Removing intermediate container 5d09e5091ece
+Successfully built a54c679576a4
+6a88491e5680c5377cb7b9b6e731461e8ef9d990623758069e5133df9b2c7756
+Error response from daemon: network go-http-server-ci_default not found
+2018/11/22 09:31:41 [emerg] 6#6: host not found in upstream "go-http-server-master" in /etc/nginx/conf.d/go-http-server-master.conf:2
+nginx: [emerg] host not found in upstream "go-http-server-master" in /etc/nginx/conf.d/go-http-server-master.conf:2
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

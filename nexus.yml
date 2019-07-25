@@ -1,0 +1,78 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus
+  labels:
+    app: nexus
+spec:
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+  - port: 80
+    targetPort: 8081
+  selector:
+    app: nexus
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nexus
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  # labels:
+  #   app: guestbook
+  #   tier: frontend
+spec:
+  # this replicas value is default
+  # modify it according to your case
+  replicas: 1
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   matchLabels:
+  #     app: guestbook
+  #     tier: frontend
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      containers:
+      - name: nexus
+        #image: gcr.io/google-samples/gb-frontend:v4
+        #image: jenkins
+        image: sonatype/nexus
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+          # If your cluster config does not include a dns service, then to
+          # instead access environment variables to find service host
+          # info, comment out the 'value: dns' line above, and uncomment the
+          # line below.
+          # value: env
+        ports:
+        - name: http-port
+          containerPort: 80
+        - name: jnlp-port
+          containerPort: 50000
+        #volumeMounts:
+        #- name: jobs
+          #mountPath: "/var/jenkins_home"
+          #mountPath: "/test-vmdk"
+        #command: ["touch /text2.txt"]
+        #command: ["/persist.sh"]
+        #command: ["sleep", "40"]
+      #volumes:
+        #- name: jobs
+        #- name: jenkins-home
+          #persistentVolumeClaim:
+            #claimName: pvc0003
+        #- "/var/run/docker.sock:/var/run/docker.sock"
+        #- "./jenkins/jobs:/var/jenkins_home/jobs:Z"
